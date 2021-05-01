@@ -43,6 +43,10 @@ export class PriceCalculatorComponent implements OnInit {
   }
 
   calculatePrice(): void{
+    if (this.priceDetails.discountInPrice || this.priceDetails.finalPrice ){
+      this.priceDetails.discountInPrice = null;
+      this.priceDetails.finalPrice = null;
+    }
     this.priceDetailService.getPriceDetails(this.priceDetails).pipe(take(1)).subscribe(value => {
       this.priceDetails = value;
     });

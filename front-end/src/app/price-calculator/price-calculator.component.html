@@ -38,6 +38,9 @@
               <button mat-raised-button color="warn"
                       type="submit" (click)="calculatePrice()" [disabled]="!isFormValid()">Calculate Price
               </button>
+              <button mat-raised-button color="accent"
+                      type="submit" (click)="priceCalculatorForm.resetForm()">Reset
+              </button>
             </mat-card-actions>
           </div>
         </div>

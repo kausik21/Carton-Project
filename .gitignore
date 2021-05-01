@@ -9,3 +9,98 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/hotswap_agent.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/*
+*.iml
+*.name
+*.pem
+
+# Sensitive or high-churn files:
+.idea/inspectionProfiles/*
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/artifacts
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/dataSources/*
+
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Binaries
+classes/
+/build
+buildSrc/build
+/spring-*/build
+/src/asciidoc/build
+target/
+bin
+build.sh
+
+
+.idea/*
+node_modules/*
+.vscode/*
+dist/*
+
+# Logs and configs
+*.java.hsp
+*.sonarj
+*.sw*
+.DS_Store
+.settings
+.springBeans
+
+integration-repo
+ivy-cache
+jxl.log
+jmx.log
+derby.log
+spring-test/test-output/
+.gradle
+argfile*
+rebel.xml
+activemq-data/
+dataSources.ids
+dataSources.xml
+misc.xml
+.rebel.xml.bak

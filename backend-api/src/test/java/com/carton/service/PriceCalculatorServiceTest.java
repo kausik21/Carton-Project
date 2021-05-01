@@ -39,6 +39,21 @@ public class PriceCalculatorServiceTest {
     }
 
     @Test
+    public void calculatePriceOfSingleUnitsMoreThanCartonUnit(){
+        ItemDetails itemDetails = getItemDetails();
+        if(itemDetails != null){
+            PriceDetails priceDetails = new PriceDetails();
+            priceDetails.setUnitType(UnitType.SINGLE_UNIT.getUnitType());
+            priceDetails.setItemDetailsSeq(itemDetails.getItemDetailsSeq());
+            priceDetails.setUnitCount(30);
+            PriceDetails priceDetails1 = (PriceDetails) priceCalculateService.calculatePrice(priceDetails).getBody();
+            if (priceDetails1 != null) {
+                assertThat(priceDetails1.getFinalPrice()).isEqualTo(288.75);
+            }
+        }
+    }
+
+    @Test
     public void calculatePriceOfCartonUnits(){
         ItemDetails itemDetails = getItemDetails();
         if(itemDetails != null){

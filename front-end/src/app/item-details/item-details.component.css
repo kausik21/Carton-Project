@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+  align-content: center;
+}
+.mat-row:hover {
+  background-color: #6b6b6b;
+  cursor: pointer;
+  height: 30px;
+}
+.mat-row{
+  height: 30px;
+}
+
+.mat-header-row{
+  background-color: #b2bdb4;
+  height: 30px;
+}

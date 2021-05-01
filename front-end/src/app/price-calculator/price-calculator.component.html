@@ -1,0 +1,64 @@
+<div class="gene-form-wizard" fxLayout="row" fxLayoutAlign=" start">
+  <mat-card style="width:-webkit-fill-available">
+    <div class="mat-card-devHdr"><h3><b>Price Calculator</b></h3></div>
+    <div class="gene-card-content">
+      <form #priceCalculatorForm="ngForm">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+            <mat-form-field appearance="fill" class="fill-form-filed">
+              <mat-label>Item</mat-label>
+              <mat-select name="item"
+                          [(ngModel)]="priceDetails.itemDetailsSeq" #Item="ngModel">
+                <mat-option *ngFor="let item of itemList" [value]="item.itemDetailsSeq">
+                  {{item.itemName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+            <mat-form-field appearance="fill" class="fill-form-filed">
+              <mat-label>Unit Type</mat-label>
+              <mat-select placeholder="Unit Type" name="unit"
+                          [(ngModel)]="priceDetails.unitType" #Unit="ngModel">
+                <mat-option *ngFor="let unitType of unitTypes" [value]="unitType.unitType">
+                  {{unitType.unitTypeDescription}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+            <mat-form-field appearance="fill" class="fill-form-filed">
+              <mat-label>No of Units</mat-label>
+              <input type="number" step="1"  [(ngModel)]="priceDetails.unitCount" name="unitCount"
+                     #UnitCount="ngModel" max="50" min="1" matInput>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100" fxFlex.gt-sm="40" fxFlex.gt-xs="40">
+            <mat-card-actions>
+              <button mat-raised-button color="warn"
+                      type="submit" (click)="calculatePrice()" [disabled]="!isFormValid()">Calculate Price
+              </button>
+            </mat-card-actions>
+          </div>
+        </div>
+      </form>
+      <div  fxLayout="row" fxLayoutAlign="space-between center">
+        <div *ngIf="priceDetails.discountInPrice"fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+          <mat-form-field appearance="fill" class="fill-form-filed">
+            <mat-label>Discount Price</mat-label>
+            <input type="number"  [(ngModel)]="priceDetails.discountInPrice" style="color: darkred" matInput>
+          </mat-form-field>
+        </div>
+        <div *ngIf="priceDetails.finalPrice" fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+          <mat-form-field appearance="fill" class="fill-form-filed">
+            <mat-label>Price</mat-label>
+            <input type="number"  [(ngModel)]="priceDetails.finalPrice"  style="color: darkgreen" matInput>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="60" fxFlex.gt-xs="60">
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+

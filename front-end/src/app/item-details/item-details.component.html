@@ -1,0 +1,43 @@
+<div class="gene-form-wizard" fxLayout="row" fxLayoutAlign=" start">
+  <mat-card style="width:-webkit-fill-available">
+    <div class="mat-card-devHdr"><h3><b>Carton Items</b></h3></div>
+    <div>
+      <p>
+        Note :
+        <br> <b>- If you purchase single units, the price is acquired using the carton price multiplied by an increase of
+        30% (1.3). (to compensate for manual labor)</b>
+        <br> <b>- If you purchase 3 cartons or more, you will receive a 10% discount off the carton price</b>
+      </p>
+    </div>
+    <div>
+      <mat-card-content>
+        <mat-card>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+              <p><b>Item</b></p>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+              <p><b>No of Units</b></p>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+              <p><b>Carton Price</b></p>
+            </div>
+          </div>
+          <mat-card *ngFor="let item of itemDetails">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+                <p><b>{{item.itemName}}</b></p>
+              </div>
+              <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+                <p><b>{{item.noOfUnitsInCarton}}</b></p>
+              </div>
+              <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.gt-xs="20">
+                <p><b>Rs.{{item.cartonPrice}}</b></p>
+              </div>
+            </div>
+          </mat-card>
+        </mat-card>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>
